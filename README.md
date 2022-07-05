@@ -4,7 +4,12 @@
 
 ![](https://i.ytimg.com/vi/6_zFLsW7z2E/maxresdefault.jpg)
 
+## Before we start!
 
+* `npm install -g typescript`
+* `npm install -g ts-node`
+* compiling your code with tsc `tcs` in the folder you want will create js files in dist
+* Running ts without compiling `ts-node index.ts`
 
 
 **The code is not clean on purpose and violates a lot of rules.**
