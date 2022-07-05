@@ -1,4 +1,4 @@
-class FoodStorage {
+export class FoodStorage {
     private storage = new Map<string, number>();
 
     public addPortions(food: string, portions: number): void {
@@ -26,4 +26,3 @@ class FoodStorage {
 
 }
 
-export const foodStorage: FoodStorage = new FoodStorage();

@@ -1,55 +1,65 @@
-import {Caretaker} from "./caretaker";
-import {Animal, AnimalType} from "./animal";
-import {foodStorage} from "./food-storage";
+import {DangerousAnimal} from "./animal-types/animal";
 import {Zoo} from "./zoo";
+import {Tiger} from "./animal-types/tiger";
+import {Shark} from "./animal-types/shark";
+import {Dog} from "./animal-types/dog";
+import {Cat} from "./animal-types/cat";
+import {Volunteer, ZooCaretaker} from "./employees/zoo-caretaker";
+import {FoodStorage} from "./food-storage";
+import {ZooReporter} from "./reporter/zoo-reporter";
 
 let zoo: Zoo;
+let foodStorage = new FoodStorage();
+
+async function main() {
+    init()
+    await simulate();
+    report()
+}
 
 function init() {
-    const caretakers: Caretaker[] = [
-        new Caretaker('John'),
-        new Caretaker('Tarzan'),
-        new Caretaker('Ezekiel')
-    ];
-
-    const animals: Animal[] = [
-        new Animal(AnimalType.TIGER, 'Tigger'),
-        new Animal(AnimalType.SHARK, 'Jaws'),
-        new Animal(AnimalType.DOG, 'Snoopy'),
-        new Animal(AnimalType.CAT, 'Garfield'),
-        new Animal(AnimalType.DOG, 'Toto')
-    ]
-
 
     foodStorage.addPortions('milk', 2);
     foodStorage.addPortions('fish', 3);
     foodStorage.addPortions('bonzo', 1);
     foodStorage.addPortions('meat', 5);
 
-    zoo = new Zoo(animals, caretakers);
+    zoo = new Zoo(foodStorage);
+    zoo.registerCaretaker(new ZooCaretaker('John'));
+    zoo.registerCaretaker(new ZooCaretaker('Tarzan'));
+    zoo.registerVolunteer(new Volunteer('Ezekiel'));
+
+
+    zoo.addAnimal(new Tiger('Tigger'));
+    zoo.addAnimal(new Shark('Jaws'));
+    zoo.addAnimal(new Dog('Snoopy'));
+    zoo.addAnimal(new Cat('Garfield'));
+    zoo.addAnimal(new Dog('Toto'));
 }
 
-
-function getRandomInt(max:number) {
-    return Math.floor(Math.random() * max);
+async function simulate (){
+    while (!foodStorage.isEmpty()) {
+        zoo.randomFeeding();
+        zoo.randomPetting();
+        await delay(100)
+    }
 }
 
 const delay = (ms:number) => new Promise(res => setTimeout(res, ms));
 
-async function main() {
-    while (!foodStorage.isEmpty()) {
-        await zoo.caretakers[getRandomInt(zoo.caretakers.length)].feed(
-            zoo.animals[getRandomInt(zoo.animals.length)]
-        );
-        await delay(200)
-    }
+function report (){
     console.log('-----------------------------------------------------------------')
     console.log('-----------------------Summary-----------------------------------')
     console.log('-----------------------------------------------------------------')
-    zoo.caretakers.forEach(c => {
-        console.log(`${c.name} was paid a total of ${c.salary}`)
-    })
+
+    let reporter:ZooReporter = new ZooReporter(zoo);
+    reporter.generateSalaryReport();
+    reporter.generateFeedingReport();
+    reporter.generateNotFedReport();
+    reporter.generateHappinessReport();
 }
 
-init();
+
+
+
 main();
