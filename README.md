@@ -8,6 +8,8 @@
 
 * `npm install -g typescript`
 * `npm install -g ts-node`
+*  cd to project folder
+* `npm install`
 * compiling your code with tsc `tcs` in the folder you want will create js files in dist
 * Running ts without compiling `ts-node index.ts`
 
