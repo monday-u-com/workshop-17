@@ -1,7 +1,19 @@
 {
-  "name": "$name$",
-  "version": "$version$",
+  "name": "sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  },
   "dependencies": {
-    $END$
+    "@types/node": "^17.0.35",
+    "async-mutex": "^0.3.2"
   }
 }

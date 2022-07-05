@@ -30,18 +30,18 @@ function init() {
 }
 
 
-function getRandomInt(max) {
+function getRandomInt(max:number) {
     return Math.floor(Math.random() * max);
 }
 
-const delay = ms => new Promise(res => setTimeout(res, ms));
+const delay = (ms:number) => new Promise(res => setTimeout(res, ms));
 
 async function main() {
     while (!foodStorage.isEmpty()) {
         await zoo.caretakers[getRandomInt(zoo.caretakers.length)].feed(
             zoo.animals[getRandomInt(zoo.animals.length)]
         );
-        await delay(2500)
+        await delay(200)
     }
     console.log('-----------------------------------------------------------------')
     console.log('-----------------------Summary-----------------------------------')
