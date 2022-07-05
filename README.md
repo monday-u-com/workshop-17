@@ -10,7 +10,7 @@
 **The code is not clean on purpose and violates a lot of rules.**
 
 Through adding new features you will be forced to refactor the code.
-This workshop is **longer** than you can imagine and there is **no(!)** expectations that you will complete it today.
+This workshop is **longer** than you can imagine and there are **no(!)** expectations that you will complete it today.
 
 Also - No official homework this week so we ask you:
 
