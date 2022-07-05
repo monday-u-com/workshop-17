@@ -1,6 +1,7 @@
-import {PettableAnimal, Animal} from "../animal-types/animal";
+import { Animal} from "../animal-types/animal";
 import {Employee, PayedEmployee} from "./employee";
 import {Feeder, Petter} from "./caretaker-interface";
+import {PettableAnimal} from "../animal-types/pettable-animal";
 
 const PAY_PER_FEED: number = 500;
 const PAY_PER_PET: number = 100;

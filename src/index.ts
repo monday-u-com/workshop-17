@@ -1,4 +1,3 @@
-import {DangerousAnimal} from "./animal-types/animal";
 import {Zoo} from "./zoo";
 import {Tiger} from "./animal-types/tiger";
 import {Shark} from "./animal-types/shark";

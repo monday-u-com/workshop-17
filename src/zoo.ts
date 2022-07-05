@@ -1,12 +1,13 @@
-import {Animal, PettableAnimal} from "./animal-types/animal";
+import {Animal} from "./animal-types/animal";
 import {Volunteer, ZooCaretaker} from "./employees/zoo-caretaker";
 import {Feeder, Petter} from "./employees/caretaker-interface";
 import {FoodStorage} from "./food-storage";
+import {PettableAnimal} from "./animal-types/pettable-animal";
 
 export class Zoo {
-    private _animals: Animal[];
-    private _caretakers: ZooCaretaker[];
-    private _volunteers: Volunteer[];
+    private readonly _animals: Animal[];
+    private readonly _caretakers: ZooCaretaker[];
+    private readonly _volunteers: Volunteer[];
     private foodStorage: FoodStorage
 
     constructor(foodStorage:FoodStorage) {
@@ -14,28 +15,6 @@ export class Zoo {
         this._caretakers = [];
         this._volunteers = [];
         this.foodStorage = foodStorage;
-    }
-
-    private randomFeeder (): Feeder{
-        const index = Math.floor(Math.random() * (this._caretakers.length))
-        return this._caretakers[index];
-    }
-
-    private randomPetter (): Petter{
-        const allPetters: Petter[] = [...this._caretakers, ...this._volunteers];
-        const index = Math.floor(Math.random() * (allPetters.length))
-        return allPetters[index];
-    }
-
-    private randomAnimal(): Animal{
-        const index = Math.floor(Math.random() * (this.animals.length))
-        return this._animals[index];
-    }
-
-    private randomPettable(): PettableAnimal{
-        const pettable:any[] = this.animals.filter((a:Animal ): boolean => a.isPettable());
-        const index = Math.floor(Math.random() * (pettable.length));
-        return pettable[index];
     }
 
     public randomFeeding (){
@@ -61,7 +40,6 @@ export class Zoo {
         this._animals.push(a);
     }
 
-
     get animals(): Animal[] {
         return this._animals;
     }
@@ -73,4 +51,27 @@ export class Zoo {
     get volunteers(): Volunteer[] {
         return this._volunteers;
     }
+
+    private randomFeeder (): Feeder{
+        const index = Math.floor(Math.random() * (this._caretakers.length))
+        return this._caretakers[index];
+    }
+
+    private randomPetter (): Petter{
+        const allPetters: Petter[] = [...this._caretakers, ...this._volunteers];
+        const index = Math.floor(Math.random() * (allPetters.length))
+        return allPetters[index];
+    }
+
+    private randomAnimal(): Animal{
+        const index = Math.floor(Math.random() * (this.animals.length))
+        return this._animals[index];
+    }
+
+    private randomPettable(): PettableAnimal{
+        const pettable:any[] = this.animals.filter((a:Animal ): boolean => a.isPettable());
+        const index = Math.floor(Math.random() * (pettable.length));
+        return pettable[index];
+    }
+
 }

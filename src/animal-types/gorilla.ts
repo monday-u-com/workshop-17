@@ -1,7 +1,7 @@
-import {DangerousAnimal} from "./animal"
+import {DangerousAnimal} from "./dangerous-animal"
 import {FoodTypes} from "../food-types"
 
-export class Gurilla extends DangerousAnimal {
+export class Gorilla extends DangerousAnimal {
 
     constructor(name: string) {
         super(name);

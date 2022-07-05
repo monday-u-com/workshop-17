@@ -1,4 +1,5 @@
-import {PettableAnimal, Animal} from "../animal-types/animal";
+import {Animal} from "../animal-types/animal";
+import {PettableAnimal} from "../animal-types/pettable-animal";
 
 export interface Feeder {
     feed(animal: Animal): void;
