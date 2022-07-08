@@ -3,7 +3,7 @@ import {Tiger} from "./animal-types/tiger";
 import {Shark} from "./animal-types/shark";
 import {Dog} from "./animal-types/dog";
 import {Cat} from "./animal-types/cat";
-import {Volunteer, ZooCaretaker} from "./employees/zoo-caretaker";
+import {ZooVolunteer, ZooEmployee} from "./employees/zoo-employees";
 import {FoodStorage} from "./food-storage";
 import {ZooReporter} from "./reporter/zoo-reporter";
 
@@ -24,9 +24,9 @@ function init() {
     foodStorage.addPortions('meat', 5);
 
     zoo = new Zoo(foodStorage);
-    zoo.registerCaretaker(new ZooCaretaker('John'));
-    zoo.registerCaretaker(new ZooCaretaker('Tarzan'));
-    zoo.registerVolunteer(new Volunteer('Ezekiel'));
+    zoo.registerCaretaker(new ZooEmployee('John'));
+    zoo.registerCaretaker(new ZooEmployee('Tarzan'));
+    zoo.registerVolunteer(new ZooVolunteer('Ezekiel'));
 
 
     zoo.addAnimal(new Tiger('Tigger'));
@@ -56,6 +56,7 @@ function report (){
     reporter.generateFeedingReport();
     reporter.generateNotFedReport();
     reporter.generateHappinessReport();
+    reporter.generateEmployeeActivityReport();
 }
 
 

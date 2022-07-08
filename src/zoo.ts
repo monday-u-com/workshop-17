@@ -1,13 +1,13 @@
 import {Animal} from "./animal-types/animal";
-import {Volunteer, ZooCaretaker} from "./employees/zoo-caretaker";
+import {ZooVolunteer, ZooEmployee} from "./employees/zoo-employees";
 import {Feeder, Petter} from "./employees/caretaker-interface";
 import {FoodStorage} from "./food-storage";
 import {PettableAnimal} from "./animal-types/pettable-animal";
 
 export class Zoo {
     private readonly _animals: Animal[];
-    private readonly _caretakers: ZooCaretaker[];
-    private readonly _volunteers: Volunteer[];
+    private readonly _caretakers: ZooEmployee[];
+    private readonly _volunteers: ZooVolunteer[];
     private foodStorage: FoodStorage
 
     constructor(foodStorage:FoodStorage) {
@@ -30,10 +30,10 @@ export class Zoo {
         this.randomPetter().pet(this.randomPettable());
     }
 
-    public registerVolunteer(v: Volunteer): void{
+    public registerVolunteer(v: ZooVolunteer): void{
         this._volunteers.push(v);
     }
-    public registerCaretaker (c: ZooCaretaker): void{
+    public registerCaretaker (c: ZooEmployee): void{
         this._caretakers.push(c);
     }
     public addAnimal (a: Animal): void{
@@ -44,11 +44,11 @@ export class Zoo {
         return this._animals;
     }
 
-    get caretakers(): ZooCaretaker[] {
+    get caretakers(): ZooEmployee[] {
         return this._caretakers;
     }
 
-    get volunteers(): Volunteer[] {
+    get volunteers(): ZooVolunteer[] {
         return this._volunteers;
     }
 
