@@ -1,6 +1,6 @@
 import { Animal} from "../animal-types/animal";
 import {Employee} from "./employee";
-import {Feeder, Petter} from "./caretaker-interface";
+import {Feeder, Petter} from "./caretaker-interfaces";
 import {PettableAnimal} from "../animal-types/pettable-animal";
 
 
