@@ -61,11 +61,9 @@ Animals need more than just food - they need some love. So you are asked to add 
 
 Zoo management would like to monitor the mental and physical health of the animals to do that we defined what is a happy animal:
 * A cat is happy if it was fed, and if it was pet in the last hour
-* A dog is always happy
 * A shark is never happy
 * A tiger is happy if it was fed today
 * A rabbit is always happy
-* A monkey is happy only if it has eate	n 3 bananas or more
 * A dog is always happy
 
 write the and refactor the code to support this
@@ -73,10 +71,11 @@ write the and refactor the code to support this
 #### Feature 4
 
 We are still growing and want to add monkeys to the zoo favorite food is banana - now you can refactor if you hadn’t already
+monkeys are happy only if they eat 5 bananas
 
 #### Feature 5
 
-Ok so turns out Gorillas are dangerous! 
+Ok so turns out some monkeys are dangerous - Gorillas are dangerous! 
 
 #### Feature 6
 
