@@ -51,7 +51,7 @@ As Long as we have food in the storage we pick a random caretaker and a random a
 
 #### Feature 1
 
-We want to grow the zoo add a new animal Rabbit with favorite food Carrot - without refactoring the code
+We want to grow the zoo add a new animal Rabbit with favorite food Carrot - do this without refactoring the code
 
 #### Feature 2
 
