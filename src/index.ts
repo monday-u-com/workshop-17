@@ -38,10 +38,10 @@ const delay = (ms:number) => new Promise(res => setTimeout(res, ms));
 
 async function main() {
     while (!foodStorage.isEmpty()) {
-        await zoo.caretakers[getRandomInt(zoo.caretakers.length)].feed(
+         zoo.caretakers[getRandomInt(zoo.caretakers.length)].feed(
             zoo.animals[getRandomInt(zoo.animals.length)]
         );
-        await delay(200)
+        await delay(100)
     }
     console.log('-----------------------------------------------------------------')
     console.log('-----------------------Summary-----------------------------------')

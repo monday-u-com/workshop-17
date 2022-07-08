@@ -14,7 +14,7 @@ export class Caretaker {
         this._salary = 0;
     }
 
-    public async feed(animal: Animal): Promise<void> {
+    public feed(animal: Animal): void {
         let hasFood = foodStorage.getPortion(this.getFavoriteFood(animal));
         if (hasFood) {
             console.log(`${animal.name} was given food`);
