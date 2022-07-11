@@ -57,6 +57,8 @@ We want to grow the zoo add a new animal Rabbit with favorite food Carrot - do t
 
 Animals need more than just food - they need some love. So you are asked to add new functionality “petting”. We allow to pet only non-dangerous animals (Not sharks and tigers).
 
+For petting caretakers are paid 100
+
 #### Feature 3
 
 Zoo management would like to monitor the mental and physical health of the animals to do that we defined what is a happy animal:
